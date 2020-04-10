@@ -1,0 +1,52 @@
+http://m.elecfans.com/article/657272.html
+http://www.51hei.com/bbs/dpj-114036-1.html
+http://m.elecfans.com/article/719437.html
+
+74HC595控制数码管
+HC138控制刷新端
+只需要两个计数 所以总共需要4个单片机端口 以及一个74LS04反相器用来选择
+
+使用8*8双色LED点阵
+https://blog.csdn.net/portb/article/details/43926117
+驱动方式↑
+
+使用摇杆/遥控器/密码按键盘/9个微动开关进行输入
+
+
+lcd.createChar(0,O_);  1
+  lcd.createChar(1,OX);  7
+  lcd.createChar(2,OO);  5
+  lcd.createChar(3,X_);  2
+  lcd.createChar(4,XO);  8
+  lcd.createChar(5,XX);  6
+  lcd.createChar(6,_X);  4
+  lcd.createChar(7,_O);  3
+
+
+Win(judge_main());
+
+
+←1022,910  1022,503
+↖1020,1023  688,1022
+↙1022,475  1020,244
+↓ 521,1  600,1
+↘2,1   1,132
+→1,496    1,560
+↗1,950  1,1022
+↑ 516,1022  436,1022
+
+Role == TRUE 为O
+Role == FALSE 为X
+
+lcd.setCursor(0,0);
+  lcd.write(byte(0));
+  lcd.setCursor(1,0);
+  lcd.write(byte(1));
+  lcd.setCursor(2,0);
+  lcd.write(byte(2));
+  lcd.setCursor(0,1);
+  lcd.write(byte(1));
+  lcd.setCursor(1,1);
+  lcd.write(byte(4));
+  lcd.setCursor(2,1);
+  lcd.write(byte(7));
